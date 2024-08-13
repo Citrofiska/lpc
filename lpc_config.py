@@ -1,8 +1,14 @@
 sr = 44100
 fft_size = 1024
 hop_size = 512
-order = 400
+order = round(fft_size * 0.3)
+pair_num = 10  # Number of pairs to process in parallel
 
-tb1_dir = "../data/lpc_data/timb1/"
-tb2_dir = "../data/lpc_data/timb2/"
-output_dir = "../data/lpc_data/output/"
+# Instruments: Drum, Guitar, Violin, Piano
+car_timb = 'Piano'
+mod_timb = 'Violin'
+
+car_dir = f"data/preprocessed/{car_timb}/"
+mod_dir = f"data/preprocessed/{mod_timb}/"
+output_dir = "data/output/"
+
